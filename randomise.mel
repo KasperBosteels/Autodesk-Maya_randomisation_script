@@ -1,0 +1,13 @@
+{
+  string $nodes[] = `ls -selection`;
+  for ($node in $nodes)
+  {
+    $rnd = rand(1,5);
+    int $sX = `getAttr ($node + ".scaleX")`;
+    int $sY = `getAttr ($node + ".scaleY")`;
+    int $sZ = `getAttr ($node + ".scaleZ")`;
+    setAttr ($node + ".scaleX") ($sX * $rnd);
+    setAttr ($node + ".scaleY") ($sY * $rnd);
+    setAttr ($node + ".scaleZ") ($sZ * $rnd);
+  }
+}
